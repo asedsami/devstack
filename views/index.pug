@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+	head
+		title= title
+		script(src='/reload/reload.js')
+		//- script(src='reload-client.js')
+		//- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css")
+	body
+		h1 index.pug 
+		div= rendered
+		div#root
+		script(src='/client.bundle.js' type='text/javascript')
