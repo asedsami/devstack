@@ -8,10 +8,7 @@ const template = (Element) => `
 		<div id='root'>${Element}</div>
 		<script src='/client.bundle.js'></script>
 		<script src="/socket.io/socket.io.js"></script>
-		<script>
-			console.log('templates.js');	
-			var socket = io.connect('http://localhost:3000');
-		</script>
+		<script src='/socketstuff.js'></script>
 	</body>
 	</html>
 `;
