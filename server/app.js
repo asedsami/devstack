@@ -9,13 +9,11 @@ import { renderToString } from 'react-dom/server';
 import App from '../client/App';
 import template from './template';
 import { StaticRouter } from 'react-router-dom';
+import { graphQL, graphiQL, jwtAuth } from './api';
 
 const {log} = console;
 const config = _config(process.env);
-
-
 const context = {};
-
 
 
 // throw new Error('Server Error');
@@ -31,6 +29,9 @@ app.set('views', 'views');
 
 if(config.app.morganFlag)
 	app.use(morgan('dev'));
+  
+app.use('/gql', jwtAuth, graphQL);
+app.use('/giql', jwtAuth, graphiQL);
 
 app.use((req, res, nx)=> {
 	const AppString = renderToString(
