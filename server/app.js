@@ -13,7 +13,6 @@ import { graphQL, graphiQL, jwtAuth } from './api';
 
 const {log} = console;
 const config = _config(process.env);
-const context = {};
 
 // throw new Error('Server Error');
 
@@ -32,6 +31,7 @@ if(config.app.morganFlag)
 app.use('/gql', jwtAuth, graphQL);
 app.use('/giql', jwtAuth, graphiQL);
 
+const context = {};
 app.use((req, res, nx)=> {
 	const AppString = renderToString(
 		<StaticRouter 
