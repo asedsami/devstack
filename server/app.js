@@ -15,7 +15,6 @@ const {log} = console;
 const config = _config(process.env);
 const context = {};
 
-
 // throw new Error('Server Error');
 
 connectToDB(config.mongo);
@@ -46,6 +45,6 @@ app.use((req, res, nx)=> {
 	res.send(template(AppString));
 	// const document = template(AppString);
 		// res.send(document);
-})
+});
 
 export default app;
