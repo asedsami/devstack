@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export default function connectToDB({URI, debugFlag}, cb) {
 	mongoose.Promise = global.Promise;
-	mongoose.connect(URI, {useMongoClient: true});
+	mongoose.connect(URI);
 	mongoose.set('debug', debugFlag);
 
 	let db = mongoose.connection;
