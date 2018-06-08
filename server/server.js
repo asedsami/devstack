@@ -9,6 +9,8 @@ const io = socketio(server);
 
 io.on('connection', socket=> {
 	console.log('connected');
+	socket.emit('test', 'test string from server');
+	socket.on('test', str=> console.log('received test string on server ', str));
 });
 
 reload(app);
