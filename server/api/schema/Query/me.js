@@ -5,4 +5,6 @@ const me = {
 	resolve(root, args, {user}) {
 		return {_id: "some id"};
 	}
-}
+};
+
+export default me;
